@@ -13,7 +13,7 @@ const reducer = (state = initialState, action) => {
     case FETCH_ALL:
       return action.payload;
     case CREATE:
-      return state;
+      return [...state, action.payload];
     default:
       return state;
   }
@@ -39,7 +39,7 @@ export const createPost = (post) => async (dispatch) => {
   const action = { type: CREATE, payload: [] }
 
   try {
-    const { data } = await api.createPost();
+    const { data } = await api.createPost(post);
     action.payload = data;
     dispatch(action);
   } catch (error) {
