@@ -1,4 +1,4 @@
-import * as api from '../api'
+import * as api from '../api/api'
 
 //Action Types
 const FETCH_ALL = 'FETCH_ALL'
@@ -28,6 +28,18 @@ export const getPosts = () => async (dispatch) => {
 
   try {
     const { data } = await api.fetchPosts();
+    action.payload = data;
+    dispatch(action);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+export const createPost = (post) => async (dispatch) => {
+  const action = { type: CREATE, payload: [] }
+
+  try {
+    const { data } = await api.createPost();
     action.payload = data;
     dispatch(action);
   } catch (error) {
