@@ -9,7 +9,7 @@ const classes = styles();
 
 const Form = () => {
   const [postData, setPostData] = useState({
-    creator: '', title: '', message: '', tags: '', selectedFIles: ''
+    creator: '', title: '', message: '', tags: '', selectedFIle: ''
   });
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
