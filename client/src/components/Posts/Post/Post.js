@@ -19,11 +19,10 @@ const Post = ({ post }) => {
         alt="green iguana"
         title={post.title}
       />
-      <div sx={classes.overlay}>
+      <div sx={{...classes.overlay}}>
         <Typography variant="h6"> {post.creator} </Typography>
-        <Typography variant="body2"> {moment(post.created).fromNow()} </Typography>
       </div>
-      <div sx={classes.overlay2}>
+      <div sx={{...classes.overlay2}}>
         <Button style={{ color: 'white' }} size="small" onClick={() => { }}>
           <MoreHoriz fontSize="default" />
         </Button>

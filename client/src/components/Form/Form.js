@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 
 const classes = styles();
 
-const Form = () => {
+const Form = ({currentId, setCurrentId}) => {
   const [postData, setPostData] = useState({
     creator: '', title: '', message: '', tags: '', selectedFIle: ''
   });
